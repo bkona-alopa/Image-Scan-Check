@@ -17,7 +17,8 @@ jobs:
         id: image_build
         uses: docker/build-push-action@v4
         with:
-          tags: image-scan:latest
+          tags: |
+            image-scan:latest
           context: .
           push: false
           cache-from: type=gha
