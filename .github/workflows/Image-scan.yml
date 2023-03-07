@@ -40,5 +40,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: trivy-results.json
+          name: ImageScanResults
           path: trivy-results.json
