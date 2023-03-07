@@ -18,7 +18,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           tags: image-scan:latest
-          context: .
+          file: .
           push: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -27,6 +27,7 @@ jobs:
         run: |
           ls -l
           docker images
+          docker inspect image-scan:latest
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
